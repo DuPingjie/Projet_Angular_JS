@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <span>Les Articles</span>
+  </ion-toolbar></ion-header>
+<ion-content>
+  <ion-button (click) = "back()">Retour</ion-button>
+  <section >
+    <h4>Bienvenue sur la page des articles</h4>
+  </section>
+
+  <h1 *ngIf="Error">
+    Serveur Error!
+  </h1>
+
+  <div *ngIf="!Error">
+    <div *ngFor="let article of articles">
+      <div (click) = "details(article.id)">
+        <h3>{{article.title}}</h3>
+        <p>{{article.body}}</p>
+      </div>
+      <ion-button (click) = "supprimerArticle(article.title)" *ngIf="Persister(article.title)">Supprimer</ion-button>
+      <ion-button (click) = "persisterArticle(article)" *ngIf="!Persister(article.title)">Persister</ion-button>
+      <br />
+    </div>
+  </div>
+</ion-content>

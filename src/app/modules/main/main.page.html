@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <span>Main Page</span>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-button (click) = "back()">Retour</ion-button>
+  <section >
+    <h4>Bienvenue sur cet liste!</h4>
+  </section>
+  <ion-button (click) = "goToPage1()">Voir les articles</ion-button>
+
+  <section>
+    <h4>Cliquer les items pour supprimer!</h4>
+    <ul class="list-group">
+      <div *ngFor="let title of titles">
+        <ion-button *ngIf="Persister(title)" (click) = "supprimerArticle(title)">{{title}}</ion-button>
+        <br />
+      </div>
+      <ion-button *ngIf="localStorageNull()" (click) = "supprimerTous()">Supprimer Tous</ion-button>
+    </ul>
+  </section>
+</ion-content>

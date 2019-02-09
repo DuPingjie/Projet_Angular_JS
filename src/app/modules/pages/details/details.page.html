@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <span>Les details</span>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-button (click) = "back()">Retour</ion-button>
+  <section >
+    <h4>Bienvenue sur la page des details</h4>
+  </section>
+
+  <h1 *ngIf="Error">
+    Serveur Error!
+  </h1>
+
+  <div *ngIf="!Error">
+    <div *ngIf="article">
+      <p>userId: {{article.userId}}</p>
+      <p>id: {{article.id}}</p>
+      <p>title: {{article.title}}</p>
+      <p>body: {{article.body}}</p>
+      <br/>
+    </div>
+  </div>
+</ion-content>

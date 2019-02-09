@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+      <span>Auth</span>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <section>
+      <h4>Se connectez, svp!</h4>
+    </section>
+  
+    <section>
+        <form>
+            <section class="form-group">
+                <label for="email">Email</label>
+                <ion-input type="text" class="form-control" id="email" placeholder="Remplir email" [(ngModel)]="user.email" name="email" required></ion-input>
+            </section>
+            <section class="form-group">
+                <label for="password">Mot cle</label>
+                <ion-input type="password" class="form-control" id="password" placeholder="Remplir mot cle" [(ngModel)]="user.password" name="password" required></ion-input>
+            </section>
+            <ion-button (click)="onLogin()">Connecter</ion-button>
+            <ion-button (click)="onSignup()">Register</ion-button>
+        </form>
+    </section>
+</ion-content>
